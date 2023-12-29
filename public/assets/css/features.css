@@ -1,0 +1,73 @@
+
+/*Colores*/
+:root {
+  --primary-color: #212121;
+  --primary-light-color: #484848;
+  --secondary-color: #fdd835;
+  --grey-color: #f5f5f6;
+  --text-color: #fff;
+  --text-secondary-color: #000;
+}
+.primary-bg{
+	background: var(--primary-color) !important;
+}
+.primary-txt{
+	color: var(--primary-color) !important;
+}
+.primary-light-bg{
+	background: var(--primary-light-color) !important;
+}
+.secondary-bg{
+	background: var(--secondary-color) !important;
+}
+.secondary-txt{
+	color: var(--secondary-color) !important;
+}
+.grey-gb{
+	background: var(--grey-color) !important;
+}
+.color-text{
+	color: var(--text-color) !important;
+}
+.color-secondary-text{
+	color: var(--text-secondary-color) !important;
+}
+
+/*HOME*/
+.btn-secondary {
+    background: var(--primary-color) !important;
+    border-color:var(--primary-color) !important;
+    color: var(--text-color) !important;
+}
+.btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active, .btn-secondary.active {
+    background-color: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+    color: var(--text-secondary-color) !important;
+}
+/*LOGIN*/
+.btn-primary {
+    background: var(--primary-color) !important;
+    border-color:var(--primary-color) !important;
+    color: var(--text-color) !important;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
+    background-color: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+    color: var(--text-secondary-color) !important;
+}
+
+/*INDEX*/
+/*Sidebar*/
+.page-wrapper .page-body-wrapper .page-sidebar .main-header-left {
+     -webkit-box-shadow: initial; 
+     box-shadow: initial; 
+}
+.page-wrapper .page-body-wrapper .page-sidebar .sidebar-menu>li>a:hover {
+    color: var(--text-secondary-color);
+    background: var(--secondary-color);
+}
+
+/*Nav*/
+.page-main-header .main-header-right svg line {
+    color: var(--text-color);
+}

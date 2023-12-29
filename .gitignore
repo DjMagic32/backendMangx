@@ -1,0 +1,7 @@
+node_modules/
+*.log
+/config/database.js
+/config/credentials.js
+.vscode/
+transport.js
+**/.env

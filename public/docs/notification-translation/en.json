@@ -1,0 +1,37 @@
+[
+    {
+        "type": "success",
+        "title": "Save",
+        "message": "This record was saved successfully",
+        "action": "save",
+        "add_data": true
+    },
+    {
+        "type": "success",
+        "title": "Delete",
+        "message": "This record was deleted successfully",
+        "action": "delete",
+        "add_data": true
+    },
+    {
+        "type": "success",
+        "title": "Data Sync.",
+        "message": "These Data were successfully synchronized",
+        "action": "data-sync",
+        "add_data": true
+    },
+    {
+        "type": "success",
+        "title": "Get all",
+        "message": "This get was successfully",
+        "action": "get-all",
+        "add_data": true
+    },
+    {
+        "type": "error",
+        "title": "Update Credit Card",
+        "message": "An error has occurred updating your credit card, please try again",
+        "action": "no-update-credit-card",
+        "add_data": true
+    }
+]
