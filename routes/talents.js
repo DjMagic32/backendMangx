@@ -1,5 +1,4 @@
 // PACKAGES
-
 const express = require('express');
 const app = express.Router();
 const multer  = require('multer');
@@ -14,7 +13,6 @@ const {isValidToken} = require("../middlewares/index");
 const {
 	talentsController
 } = require('../controllers/main/manager');
-
 
 app.get('/talent', isValidToken, talentsController.get.talent);
 

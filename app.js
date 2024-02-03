@@ -1,7 +1,4 @@
-// =============================================================================
 // PACKAGES
-// =============================================================================
-
 require('dotenv').config()
 const swaggerDoc = require("swagger-ui-express");
 const swaggerDocumentation = require("./helpers/documentation")
@@ -21,18 +18,14 @@ const cors = require('cors');
 const port = process.env.PORT || 8086;
 var fs = require('fs')
 
-// HELPERS
-
-
 // CONFIG DATABASE
-
 db.connection(); //dataBase Connection
 require('./services/passport')(passport); // pass passport for configuration
 
 // ROUTERS
-
 const {
   IndexRouter,
+  MangasRouter
 } = require("./routes/main/manager");
 
 // VIEW ENGINE SETUP
@@ -96,7 +89,8 @@ app.use("/documentations", swaggerDoc.setup(swaggerDocumentation));
 //app.use('/api/v1/preinterview', isValidToken, Preinterview);
 //app.use('/api/v1/views', isValidToken, ViewsRouter);
 //app.use('/api/v1/admin', AdminRouter)
-app.use('/', IndexRouter)
+app.use('/api/v1/mangas', MangasRouter);
+app.use('/', IndexRouter);
 // =============================================================================
 // CATCH 404 AND FORWARD TO ERROR HANDLER
 // =============================================================================
