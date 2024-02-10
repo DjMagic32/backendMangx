@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+const Car = require('mongoose');
 
-var CarSchema = mongoose.Schema({
+var CarSchema = Car.Schema({
 
   modelo                    : String, 
   placa                     : String,
