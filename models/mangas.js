@@ -16,4 +16,4 @@ var mangasSchema = mongoose.Schema({
   date_updated              : { type: Date, default: Date.now },
 });
 
-module.exports = mongoose.model( 'Mangas', mangasSchema );
+module.exports = mongoose.model( 'Mangas', mangasSchema ); //kjghjhkgkjg
