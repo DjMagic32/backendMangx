@@ -1,5 +1,4 @@
 module.exports = {
-    talentsController                   :require('../talents'),
+    companyController                   :require('../company'),
     indexController                     :require('../index'),
-    mangaController                    :require('../mangas'),
 };
