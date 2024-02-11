@@ -5,20 +5,20 @@ const modelServices     = require( "./main/model" );
 // =============================================================================
 // MODEL
 // =============================================================================
-const talents   = require( "../models/talents" ); // Database Model
+const company   = require( "../models/company" ); // Database Model
 // =============================================================================
 // CONSTANTS
 // =============================================================================
 const queryPopulate  = null;
 
-class talentsService extends modelServices {
+class companyService extends modelServices {
 	/**
-	* @description Create an instance of talentsService
+	* @description Create an instance of companyService
 	*/
 	constructor () {
-		super( talents, queryPopulate );
+		super( company, queryPopulate );
 		// Create instance of Data Access layer using our desired model
-		this.modelServices = new modelServices( talents, queryPopulate );
+		this.modelServices = new modelServices( company, queryPopulate );
 	};
 };
-module.exports = new talentsService();
+module.exports = new companyService();
