@@ -25,7 +25,7 @@ require('./services/passport')(passport); // pass passport for configuration
 // ROUTERS
 const {
   IndexRouter,
-  MangasRouter
+  CompanyRouter,
 } = require("./routes/main/manager");
 
 // VIEW ENGINE SETUP
@@ -65,31 +65,10 @@ app.use(flash());
 // =============================================================================
 const { isValidToken, } = require("./middlewares/index");
 
-//app.use('/api/v1/sms', twilioRouter)
-//app.use('/api/v1/webhook-ws-service', webhook_messagebirdRouter);
-//app.use('/api/v1/payment_plans', payment_plansRouter);
-//app.use('/api/v1/transaction', transaction_companiesRouter);
-//app.use('/api/v1/wallet', wallet_companiesRouter);
-//app.use('/api/v1/vacant', VacantsRouter);
-//app.use('/api/v1/dash_talent', isValidToken, DashTalentRouter);
-//app.use('/api/v1/positions', PositionsRouter);
-//app.use('/api/v1/skills', SkillsRouter);
-//app.use('/api/v1/talent', TalentsRouter);
-//app.use('/api/v1/company', CompaniesRouter);
-//app.use('/api/v1/auth', AuthRouter);
-//app.use('/', IndexRouter);
-//app.use('/api/v1/category', CategoriesRouter);
+
+app.use('/api/v1/company', CompanyRouter);
 app.use("/documentations", swaggerDoc.serve);
 app.use("/documentations", swaggerDoc.setup(swaggerDocumentation));
-//app.use('/api/v1/interview', InterviewRouter);
-//app.use('/api/v1/match', isValidToken, MatchRouter);
-//app.use('/api/v1/talents_groups', isValidToken, TalentsGroupsRouter);
-//app.use('/api/v1/search', isValidToken, SearchRouter);
-//app.use('/api/v1/notifications', isValidToken, NotificationsRouter);
-//app.use('/api/v1/preinterview', isValidToken, Preinterview);
-//app.use('/api/v1/views', isValidToken, ViewsRouter);
-//app.use('/api/v1/admin', AdminRouter)
-app.use('/api/v1/mangas', MangasRouter);
 app.use('/', IndexRouter);
 // =============================================================================
 // CATCH 404 AND FORWARD TO ERROR HANDLER
