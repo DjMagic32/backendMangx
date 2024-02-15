@@ -18,17 +18,17 @@ const createAuto = async (req, res) => {
     // Llama a tu función de creación de documento para autos
     const createAutoResult = await models.newDocument('autos', autoData);
 
-    if (reateAutoResult.error === null) {
+    if (createAutoResult.error === null) {
       res.status(201).send({
         message: "Auto generado con éxito",
-        data: reateAutoResult.data,
+        data: createAutoResult.data,
         error: null
       });
     } else {
       res.status(500).send({
         message: "No se pudo registrar auto",
         data: null,
-        error: reateAutoResult.error
+        error: createAutoResult.error
       });
     }
   } catch (error) {
