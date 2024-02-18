@@ -1,4 +1,5 @@
 module.exports = {
     IndexRouter                 : require('../index'),
-    CompanyRouter               : require('../company'),  
+    CompanyRouter               : require('../company'),
+    findCompanyRouter           : require('../findCompany'),  
 }
