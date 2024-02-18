@@ -8,6 +8,8 @@ const {
 	findCompanyController
 } = require('../controllers/main/manager');
 
-app.get('/create-company', findCompanyController.post.findCompany); //Actualización antes del push: cambiado "app.post" por "app.get"
+app.get('/companies', findCompanyController.get.findCompany); 
+//Actualización antes del push: cambiado "app.post" por "app.get". 
+//Revisión 2: cambiado parámetros del endpoint y la petición "get".
 
 module.exports = app;
