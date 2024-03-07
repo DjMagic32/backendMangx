@@ -26,6 +26,7 @@ require('./services/passport')(passport); // pass passport for configuration
 const {
   IndexRouter,
   CompanyRouter,
+  userRouter,
 } = require("./routes/main/manager");
 
 // VIEW ENGINE SETUP
@@ -65,7 +66,7 @@ app.use(flash());
 // =============================================================================
 const { isValidToken, } = require("./middlewares/index");
 
-
+app.use('/api/v1/user', userRouter);
 app.use('/api/v1/company', CompanyRouter);
 app.use("/documentations", swaggerDoc.serve);
 app.use("/documentations", swaggerDoc.setup(swaggerDocumentation));
