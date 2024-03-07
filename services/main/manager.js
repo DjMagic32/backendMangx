@@ -1,3 +1,3 @@
 module.exports = {
-    companyService: require("../companyService"),
+    userService             : require("../userService"),
 }

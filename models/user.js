@@ -5,6 +5,8 @@ const userSchema = mongoose.Schema({
     email                : String,
     password             : String,
     userName             : String,
+    first_name           : String,
+    last_name            : String,
     deleted              : {type: Boolean, default: false},
     userType             : {type: String, default: "internal-app"},
     resetPasswordToken   : String,
