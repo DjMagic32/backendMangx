@@ -2,17 +2,20 @@
 const _ = require("lodash");
 const models = require("../helpers/models");
 const utils = require("../helpers/utils");
+//Notification
 
 // Serivicio:
 const { ridersService } = require("../services/main/manager");
 
+///////////////////////////////
 // Funciones REST
 
 const createEntrepreneurship = async (req, res) => {
   try {
     // Obtén los datos necesarios para crear el nuevo transportista.
     const entrepreneurshipData = req.body;
-    if (!entrepreneurshipData.user || entrepreneurshipData.user == "") {
+    const findUser = await models.findById("user", entrepreneurshipData?.user );
+    if (findUser.data === null){
       return  res.status(309).send({
         message: "Emprendimiento no esta viculado a un usuario",
       });
@@ -25,6 +28,8 @@ const createEntrepreneurship = async (req, res) => {
     );
 
     if (createEntrepreneurship.error === null) {
+      const message = `Bienvenido ${entrepreneurshipData?.entrepreneurshipName}, puedes vender tus productos con nosotros!`;
+
       res.status(201).send({
         message: "Emprendimiento creado con éxito",
         data: createEntrepreneurship.data,
