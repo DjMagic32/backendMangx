@@ -7,6 +7,7 @@ const userSchema = mongoose.Schema({
     userName             : String,
     first_name           : String,
     last_name            : String,
+    cedula               : Number,             
     deleted              : {type: Boolean, default: false},
     userType             : {type: String, default: "internal-app"},
     resetPasswordToken   : String,
