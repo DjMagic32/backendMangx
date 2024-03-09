@@ -15,7 +15,7 @@ const {
 
 app.post('/create-riders', ridersController.post.createRiders);
 app.get('/all-riders', ridersController.get.findAllRiders);
-app.get('/:riderId', ridersController.get.findRiderById);
+app.get('/get-rider/:riderId', ridersController.get.findRiderById);
 app.put('/:riderId', ridersController.put.updateRider);
 
 module.exports = app;
