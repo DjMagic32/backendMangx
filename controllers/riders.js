@@ -13,7 +13,6 @@ const createRiders = async (req, res) => {
   try {
     // Obtén los datos necesarios para crear el nuevo transportista.
     const ridersData = req.body;
-
     // Llama a tu función de creación de documento para transportistas.
     const createRidersResult = await models.newDocument('riders', ridersData);
 

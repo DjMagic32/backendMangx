@@ -4,6 +4,7 @@ const autopopulate = require('mongoose-autopopulate');
 var companySchema = mongoose.Schema({
     user                    : { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
     emailCompany            : String,
+    rif                     : String,
 	code_country            : { type: String, default: null},
     phone                   : { type: String, default: null},
     companyName             : { type: String, default: null},
