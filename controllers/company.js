@@ -15,7 +15,14 @@ const createCompany = async (req, res) => {
   try {
     // Obtén los datos necesarios para crear la nueva empresa desde el cuerpo de la solicitud
     const companyData = req.body;
+    const findUser = await models.findById("user", companyData?.user);
 
+    if (findUser.data === null){
+      return res.status(309).send({
+        message: "Compañía no está vinculado a un usuario",
+      });
+
+    }
     // Llama a tu función de creación de documento para empresas
     const createCompanyResult = await models.newDocument('company', companyData);
 
@@ -141,7 +148,7 @@ const removeCompany = async (req, res) => {
 
     if (updateCompanyResult.error === null) {
       res.status(200).send({
-        message: "Compañía actualizada con éxito",
+        message: "Compañía eliminada con éxito",
         data: updateCompanyResult.data,
         error: null
       });

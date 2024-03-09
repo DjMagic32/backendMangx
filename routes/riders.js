@@ -17,5 +17,7 @@ app.post('/create-riders', ridersController.post.createRiders);
 app.get('/all-riders', ridersController.get.findAllRiders);
 app.get('/get-rider/:riderId', ridersController.get.findRiderById);
 app.put('/:riderId', ridersController.put.updateRider);
+app.delete('/delete-rider/:riderId', ridersController.delete.removeRider);
+
 
 module.exports = app;
