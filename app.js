@@ -27,6 +27,8 @@ const {
   IndexRouter,
   CompanyRouter,
   userRouter,
+  ridersRouter,
+  entrepreneurshipRouter
 } = require("./routes/main/manager");
 
 // VIEW ENGINE SETUP
@@ -66,6 +68,8 @@ app.use(flash());
 // =============================================================================
 const { isValidToken, } = require("./middlewares/index");
 
+app.use('/api/v1/riders', ridersRouter);
+app.use('/api/v1/entrepreneurship', entrepreneurshipRouter);
 app.use('/api/v1/user', userRouter);
 app.use('/api/v1/company', CompanyRouter);
 app.use("/documentations", swaggerDoc.serve);
