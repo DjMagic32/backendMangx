@@ -28,7 +28,8 @@ const {
   CompanyRouter,
   userRouter,
   ridersRouter,
-  entrepreneurshipRouter
+  entrepreneurshipRouter,
+  carRouter
 } = require("./routes/main/manager");
 
 // VIEW ENGINE SETUP
@@ -68,6 +69,8 @@ app.use(flash());
 // =============================================================================
 const { isValidToken, } = require("./middlewares/index");
 
+
+app.use('/api/v1/car', carRouter);
 app.use('/api/v1/riders', ridersRouter);
 app.use('/api/v1/entrepreneurship', entrepreneurshipRouter);
 app.use('/api/v1/user', userRouter);

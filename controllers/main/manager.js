@@ -3,5 +3,6 @@ module.exports = {
     indexController                     :require('../index'),
     userController                      :require('../user'),
     ridersController                    :require('../riders'),
-    entrepreneurshipController          :require('../entrepreneurship')
+    entrepreneurshipController          :require('../entrepreneurship'),
+    carController                       :require('../car')
 };
