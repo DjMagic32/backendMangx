@@ -7,5 +7,7 @@ module.exports = {
     userRouter                  : require('../user'),
     ridersRouter                : require('../riders'),
     entrepreneurshipRouter      : require('../entrepreneurship'),
-    carRouter                   : require('../car')
+    carRouter                   : require('../car'),
+    walletRouter                : require('../wallet'),
+    transactionRouter           : require('../transaction')
 }

@@ -29,7 +29,9 @@ const {
   userRouter,
   ridersRouter,
   entrepreneurshipRouter,
-  carRouter
+  carRouter,
+  walletRouter,
+  transactionRouter
 } = require("./routes/main/manager");
 
 // VIEW ENGINE SETUP
@@ -75,6 +77,8 @@ app.use('/api/v1/riders', ridersRouter);
 app.use('/api/v1/entrepreneurship', entrepreneurshipRouter);
 app.use('/api/v1/user', userRouter);
 app.use('/api/v1/company', CompanyRouter);
+app.use('/api/v1/wallet', walletRouter);
+app.use('/api/v1/transaction', transactionRouter);
 app.use("/documentations", swaggerDoc.serve);
 app.use("/documentations", swaggerDoc.setup(swaggerDocumentation));
 app.use('/', IndexRouter);
