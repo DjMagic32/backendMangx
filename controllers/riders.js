@@ -13,7 +13,17 @@ const createRiders = async (req, res) => {
   try {
     // Obtén los datos necesarios para crear el nuevo transportista.
     const ridersData = req.body;
+    const findUser = await models.findById("user", ridersData?.user);
+    console.log("No pudo crearse: ", ridersData.user)
+    console.log("No pudo crearse: ", findUser)
 
+
+    if (findUser.data === null){
+      return res.status(309).send({
+        message: "El transportista no está vinculado a un usuario",
+      });
+
+    }
     // Llama a tu función de creación de documento para transportistas.
     const createRidersResult = await models.newDocument('riders', ridersData);
 
@@ -130,6 +140,37 @@ const updateRider = async (req, res) => {
   }
 };
 
+// Eliminar perfil de un transportista.
+const removeRider = async (req, res) => {
+  try {
+    const { riderId } = req.params;
+
+    const removeRiderResult = await models.remove('riders', { _id : riderId });
+
+    if (removeRiderResult.error === null) {
+      res.status(200).send({
+        message: "Transportista eliminado con éxito",
+        data: removeRiderResult.data,
+        error: null
+      });
+    } else {
+      res.status(500).send({
+        message: "Imposible eliminar transportista.",
+        data: null,
+        error: removeRiderResult.error
+      });
+    }
+  } catch (error) {
+    console.log('Error al eliminar transportista: ', error);
+    res.status(500).send({
+      message: "Error al procesar la solicitud.",
+      data: null,
+      error: error
+    });
+  }
+};
+
+
 
 
 module.exports = {
@@ -144,4 +185,7 @@ module.exports = {
   put: {
     updateRider
   },
+  delete: {
+    removeRider
+  }
 };
